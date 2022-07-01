@@ -1,5 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{e3600bdd-b787-45d7-ad71-4767d70e82af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lzhamcomp">
+      <UniqueIdentifier>{1888a8e2-b515-4019-a049-bc59a7faf36b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lzhamcomp\include">
+      <UniqueIdentifier>{e8c7b888-60c4-42df-a006-319616a8f2e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lzhamdecomp">
+      <UniqueIdentifier>{3310f623-8be2-4d8a-aa77-c1b9539653b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lzhamdecomp\include">
+      <UniqueIdentifier>{597efe81-52f0-4cd1-94d4-b9e5dbdde1ff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\thirdparty\lzham\include\lzham.h">
       <Filter>include</Filter>
@@ -88,23 +105,6 @@
     <ClInclude Include="..\thirdparty\lzham\lzhamdecomp\lzham_lzdecompbase.h">
       <Filter>lzhamdecomp\include</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="include">
-      <UniqueIdentifier>{A82982EF-5E3B-3FDA-98B2-8F9E1F671C83}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lzhamcomp">
-      <UniqueIdentifier>{A4D7F906-DBCD-3275-9D82-C2F9A938A0E9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lzhamcomp\include">
-      <UniqueIdentifier>{CD30C53B-6D9F-3795-B818-C163ECAD158F}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lzhamdecomp">
-      <UniqueIdentifier>{DF691935-670F-336A-92AB-22BF4B5A3F1C}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="lzhamdecomp\include">
-      <UniqueIdentifier>{5C7D7007-2BCB-3760-ABD6-14E782616FCA}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\thirdparty\lzham\lzhamcomp\lzham_lzcomp.cpp">
