@@ -78,7 +78,11 @@ namespace lzham
          LZHAM_ASSERT( (reinterpret_cast<ptr_bits_t>(p_new) & (LZHAM_MIN_ALLOC_ALIGNMENT - 1)) == 0 );
 
          if (pActual_size)
-            *pActual_size = p_new ? _msize(p_new) : 0;
+#ifdef __linux__
+             * pActual_size = p_new ? malloc_usable_size(p_new) : 0;
+#else
+             * pActual_size = p_new ? _msize(p_new) : 0;
+#endif
       }
       else if (!size)
       {
@@ -115,7 +119,11 @@ namespace lzham
          }
 
          if (pActual_size)
+#ifdef __linux__
+            *pActual_size = malloc_usable_size(p_final_block);
+#else
             *pActual_size = _msize(p_final_block);
+#endif
       }
 
       return p_new;
@@ -124,7 +132,12 @@ namespace lzham
    static size_t lzham_default_msize(void* p, void* pUser_data)
    {
       LZHAM_NOTE_UNUSED(pUser_data);
+
+#ifdef __linux__
+      return p ? malloc_usable_size(p) : 0;
+#else
       return p ? _msize(p) : 0;
+#endif
    }
 
    static lzham_realloc_func        g_pRealloc = lzham_default_realloc;
